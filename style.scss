@@ -33,6 +33,10 @@ img {
    justify-content: space-between;
 }
 
+.menubar {
+   display: none;
+}
+
 .menu__item {
    padding: 3px 0;
    font-size: 1.2rem;
@@ -198,15 +202,15 @@ footer a {
 }
 
 .fa-instagram {
-   color: #E1306C;
+   color: $instagramColor;
 }
 
 .fa-linkedin {
-   color: #2867B2;
+   color: $linedinColor;
 }
 
 .fa-github {
-   color: #6e5494;
+   color: $githubColor;
 }
 
 @media only screen and (max-width: 850px) {
@@ -215,7 +219,116 @@ footer a {
       }
  }
 
-
- #body {
-    transform: rotate(180deg);
+ @media only screen and (max-width: 700px) {
+   
+   .showcase.grid {      
+      grid-template-columns: 80%;         
+      justify-content: center;
+      row-gap: 50px;
+      }
  }
+
+ @media only screen and (max-width: 500px) {
+
+   .showcase.grid {      
+      grid-template-columns: 100%;      
+      }
+
+   p {      
+      line-height: 1.2rem;
+   }
+
+   .info.grid {     
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));      
+      }
+      
+   .menu {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      right: 0;
+      background-color: $darkColor;
+      padding-left: 1rem;
+      padding-bottom: 5px;
+      // opacity: 0;
+      
+            
+      li {
+         padding: 5px 0;
+      }
+   }
+
+   .test:hover .menu {      
+      display: flex;
+      animation: menu 1s ease;
+   }
+
+   i {
+      font-size: 2rem;
+      cursor: pointer;
+   }
+
+   .menubar {
+      display: block;
+      margin: auto;
+   } 
+   
+   footer .flex {
+      flex-direction: column;
+      justify-content: space-between; 
+      align-items: center;
+   }
+ }
+
+
+
+//  Blogs
+
+.blog-svg {
+  margin-top: 50px;  
+  text-align: center;
+}
+.blog-svg svg {
+   width: 70%;
+}
+
+#s-redColor, #s-greenColor, #s-yellowColor {
+   fill: #fff;
+}
+
+svg:hover #s-mainBoard {   
+   animation: mainBoard 3s linear alternate infinite;   
+}
+
+svg:hover #s-leftLetter {
+   transform-origin: center;
+   transform-box: fill-box;
+   animation: leftLetter 6s ease-in-out infinite;   
+}
+svg:hover #s-middleLetter {   
+   animation: middleLetter 3.5s linear infinite;   
+}
+
+svg:hover #s-redColor {   
+   animation: navColor 2s infinite;
+}
+svg:hover  #s-greenColor {   
+   animation: navColor 4s infinite;
+}
+svg:hover #s-yellowColor {   
+   animation: navColor 6s infinite;   
+}
+
+// Blog main
+
+.blog-article {
+   padding-top: 100px;
+
+   p {
+      line-height: 1.5rem;
+   }
+}
+
+
+
